@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+  </head>
+  <body class="h-screen px-4 bg-gradient-to-r from-sky-500 to-indigo-500">
+    <!-- header -->
+    <header>
+      <div class="text-6xl font-serif font-semibold text-center m-10">
+        Todo List
+      </div>
+    </header>
+
+    <!-- hidden modal -->
+    <div
+      id="modalContainer"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-gray-700 bg-opacity-50 hidden"
+    >
+      <div class="bg-white rounded-lg py-7 px-10 shadow-lg">
+        <h2 class="text-2xl font-semibold mb-7">Create Task</h2>
+        <input
+          id="taskInput"
+          type="text"
+          placeholder="Task..."
+          class="input mb-7 border-b-2 border-neutral-700"
+        />
+        <div class="flex justify-between mb-7">
+          <div>
+            <label
+              for="startTime"
+              class="block text-sm font-medium text-gray-700"
+              >Start Time</label
+            >
+            <input id="startTime" type="time" class="input" />
+          </div>
+          <div>
+            <label for="endTime" class="block text-sm font-medium text-gray-700"
+              >End Time</label
+            >
+            <input id="endTime" type="time" class="input" />
+          </div>
+        </div>
+        <div class="mb-10">
+          <label for="day" class="block text-sm font-medium text-gray-700 mb-1"
+            >Select Day</label
+          >
+          <select id="day" class="input">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+        <div class="flex justify-center">
+          <button
+            id="createTaskBtn"
+            class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600"
+          >
+            Create Task
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- bar -->
+    <div class="my-3 p-1 border-8 rounded-3xl border-slate-50">
+      <div
+        class="flex justify-between items-center px-3 py-2 border-4 rounded-2xl border-slate-50"
+      >
+        <!-- filtering -->
+        <div>
+          <label for="filter" class="block text-gray-800 font-semibold mb-2"
+            >Filter:</label
+          >
+          <select
+            id="filter"
+            class="border-2 border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:border-blue-500"
+          >
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="uncompleted">Uncompleted</option>
+          </select>
+        </div>
+
+        <!-- new task -->
+        <button
+          id="newTaskBtn"
+          class="bg-sky-500 text-white py-2 px-4 rounded-full hover:bg-sky-400"
+        >
+          New task
+        </button>
+      </div>
+    </div>
+
+    <!-- plan -->
+    <div class="grid justify-items-centers h-screen bg-slate-50 rounded-2xl">
+      <div class="grid grid-cols-7 m-3 p-2 pt-6 text-center">
+        <div class="border-r-2">
+          <p class="text-2xl font-bold font-serif mt-2 mb-4">Mon</p>
+          <ul id="Monday" class="m-2 mt-6"></ul>
+        </div>
+        <div class="border-r-2">
+          <p class="text-2xl font-bold font-serif mt-2 mb-4">Tue</p>
+          <ul id="Tuesday" class="m-2 mt-6"></ul>
+        </div>
+        <div class="border-r-2">
+          <p class="text-2xl font-bold font-serif mt-2 mb-4">Wed</p>
+          <ul id="Wednesday" class="bg-eme m-2 mt-6"></ul>
+        </div>
+        <div class="border-r-2">
+          <p class="text-2xl font-bold font-serif mt-2 mb-4">Thu</p>
+          <ul id="Thursday" class="m-2 mt-6"></ul>
+        </div>
+        <div class="border-r-2">
+          <p class="text-2xl font-bold font-serif mt-2 mb-4">Fri</p>
+          <ul id="Friday" class="m-2 mt-6"></ul>
+        </div>
+        <div class="border-r-2">
+          <p class="text-2xl font-bold font-serif mt-2 mb-4">Sat</p>
+          <ul id="Saturday" class="m-2 mt-6"></ul>
+        </div>
+        <div>
+          <p class="text-2xl font-bold font-serif mt-2 mb-4">Sun</p>
+          <ul id="Sunday" class="m-2 mt-6"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="TodoList.js"></script>
+  </body>
+</html>
